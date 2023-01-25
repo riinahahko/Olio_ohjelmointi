@@ -86,8 +86,16 @@ def main():
 
     # 7.
     user_input = int(input("Give maximum value: "))
+    list = [num for num in range(user_input) if num > 0 and num % 3 == 0]
+    print("Procession is: ", list)
+    print("Number of terms is: ", len(list))
+    print("Sum of terms is: ", sum(list))
+    print("Sum of squared terms is: ", sum(i*i for i in list))
     
 main()
+
+    
+
 
 
 

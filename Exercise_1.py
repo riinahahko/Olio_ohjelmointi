@@ -94,9 +94,10 @@ def main():
     
 main()
 
+def main(): 
+
+    input("Give your choice (R, P, S): ")
     
 
 
-
-
-
+main() 

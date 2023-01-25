@@ -2,6 +2,8 @@
 # Author: Riina Hahko
 # Description: Programming demo 
 
+import random
+
 def main():
     
     # 1.
@@ -96,8 +98,11 @@ main()
 
 def main(): 
 
-    input("Give your choice (R, P, S): ")
+    # 9.
+    def random_number():
+        num = random.randint(1,6)
+        return num
     
-
+    print("Random number is: ", random_number())
 
 main() 

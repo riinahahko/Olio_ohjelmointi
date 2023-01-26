@@ -96,6 +96,13 @@ def main():
     
 main()
 
+def main():
+    
+    # 8.
+    print()
+
+main()
+
 def main(): 
 
     # 9.

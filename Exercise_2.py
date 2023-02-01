@@ -14,30 +14,30 @@ def main():
 
             if point >= 0 and point <= 120:
                 
-                if point >= 50 and point <= 64:
+                if point >= 60 and point <= 71:
                     print("Your grade is: 1")
 
-                elif point >= 65 and point <= 78:
+                elif point >= 72 and point <= 83:
                     print("Your grade is: 2")
 
-                elif point >= 79 and point <= 92:
+                elif point >= 84 and point <= 95:
                     print("Your grade is: 3")
 
-                elif point >= 93 and point <= 106:
+                elif point >= 96 and point <= 107:
                     print("Your grade is: 4")
 
-                elif point >= 107 and point <= 120:
+                elif point >= 108 and point <= 120:
                     print("Your grade is: 5")
                     
-                elif point < 50:
-                    print("Your grade is: No grade") 
+                elif point < 60:
+                    print("Your grade is: 0") 
                 break
 
             else:
-                print("Error: exercise points cannot be <0 or >120.")
+                print("Error: exercise points cannot be < 0 or > 120.")
         
         except ValueError:
-            print("Error: exercise points cannot be <0 or >120.")
+            print("Error: exercise points cannot be < 0 or > 120.")
         
 
 main()

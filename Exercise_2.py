@@ -1,6 +1,6 @@
 # File: Exercise_2.py
 # Author: Riina Hahko
-# Description: Programming demo
+# Description: Exercise2, Task 3
 
 
 

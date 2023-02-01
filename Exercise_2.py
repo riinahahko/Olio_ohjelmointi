@@ -6,6 +6,8 @@
 
 def main(): 
 
+    # 3.
+    
     while True:
         user_input = input("Exercise points: ")
 
@@ -14,19 +16,19 @@ def main():
 
             if point >= 0 and point <= 120:
                 
-                if point >= 60 and point <= 71:
+                if point >= 60 and point < 71:
                     print("Your grade is: 1")
 
-                elif point >= 72 and point <= 83:
+                elif point >= 71 and point < 83:
                     print("Your grade is: 2")
 
-                elif point >= 84 and point <= 95:
+                elif point >= 83 and point < 95:
                     print("Your grade is: 3")
 
-                elif point >= 96 and point <= 107:
+                elif point >= 96 and point < 107:
                     print("Your grade is: 4")
 
-                elif point >= 108 and point <= 120:
+                elif point >= 107 and point <= 120:
                     print("Your grade is: 5")
                     
                 elif point < 60:
@@ -39,5 +41,49 @@ def main():
         except ValueError:
             print("Error: exercise points cannot be < 0 or > 120.")
         
+
+main()
+
+def main(): 
+
+    #5
+    student_name = []
+    current_student = ""
+    student_amount = 0
+    student_grade = []
+    current_grade = 0
+    grade_total = 0
+
+    while True:
+        current_student = input("Give students first name: ")
+        student_name.append(current_student)
+        student_amount += 1
+
+        while True:
+            current_grade = int(input("Give students grade: "))
+            if current_grade >= 0 and current_grade <= 5:
+                student_grade.append(current_grade)
+                grade_total += current_grade
+                break
+            else:
+                print("Error; enter a grade between 0-5")
+
+        user_choice = ""
+        
+        while user_choice != "Y" or user_choice != "y" or user_choice != "N" or user_choice != "n":
+            print("Do you want to add more students? Y/N: ")
+            user_choice = input("")
+
+            if user_choice == "Y" or user_choice =="y":
+                break
+            elif user_choice == "N" or user_choice == "n":
+                break
+        
+        if user_choice == "Y" or user_choice == "y":
+            continue
+        elif user_choice == "N" or user_choice == "n":
+            break
+
+    print("The average grade from all students is: ", grade_total/student_amount)
 
 main()

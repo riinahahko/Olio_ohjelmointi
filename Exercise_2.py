@@ -16,14 +16,19 @@ def main():
                 
                 if point >= 50 and point <= 64:
                     print("Your grade is: 1")
+
                 elif point >= 65 and point <= 78:
                     print("Your grade is: 2")
+
                 elif point >= 79 and point <= 92:
                     print("Your grade is: 3")
+
                 elif point >= 93 and point <= 106:
                     print("Your grade is: 4")
+
                 elif point >= 107 and point <= 120:
                     print("Your grade is: 5")
+                    
                 elif point < 50:
                     print("Your grade is: No grade") 
                 break

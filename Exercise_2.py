@@ -60,19 +60,22 @@ def main():
         student_amount += 1
 
         while True:
-            current_grade = int(input("Give students grade: "))
-            if current_grade >= 0 and current_grade <= 5:
-                student_grade.append(current_grade)
-                grade_total += current_grade
-                break
-            else:
-                print("Error; enter a grade between 0-5")
+            try: 
+                current_grade = int(input("Give students grade: "))
+                if current_grade >= 0 and current_grade <= 5:
+                    student_grade.append(current_grade)
+                    grade_total += current_grade
+                    break
 
+                else:
+                    print("Error; enter a grade between 0-5")
+            except ValueError:
+                print("Error; enter a grade between 0-5")
+    
         user_choice = ""
         
         while user_choice != "Y" or user_choice != "y" or user_choice != "N" or user_choice != "n":
-            print("Do you want to add more students? Y/N: ")
-            user_choice = input("")
+            user_choice = input("Do you want to add more students? Y/N: ")
 
             if user_choice == "Y" or user_choice =="y":
                 break

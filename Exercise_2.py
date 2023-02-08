@@ -90,3 +90,111 @@ def main():
     print("The average grade from all students is: ", grade_total/student_amount)
 
 main()
+
+def main():
+
+    import random 
+    import time 
+
+    class Coin:
+        def __init__(self):
+            self.sideup = "Heads"
+
+        def toss(self):
+            self.random_int = random.randint(0,4)
+            if self.random_int == 0:
+                self.sideup = "Heads"
+            elif self.random_int == 1:
+                self.sideup = "Tails"
+            elif self.random_int == 2:
+                self.sideup = "Upright"
+            elif self.random_int == 3:
+                self.sideup = "Ground"
+            elif self.random_int == 4:
+                self.sideup = "Wormhole"
+
+        def get_sideup(self):
+            return self.sideup
+
+        def wormhole_toss(self):
+            self.coin_landing = random.randint(0,2)
+            
+            if self.coin_landing == 0:
+                self.sideup = "Heads"
+            if self.coin_landing == 1:
+                self.sideup = "Heads"
+            if self.coin_landing == 2:
+                self.sideup = "Side"
+        
+    class Player(Coin):
+
+        def __init__(self):
+            self.player_score = 0
+        
+        def guess (self):
+            self.player_guess = int(input("Guess which way the coin falls: Press 1 for Heads, 2 for Tails: "))
+            print("You guessed: ")
+            print(self.player_guess)
+        
+        def correct_guess(self):
+            self.player_score += 1
+            return self.player_score
+        
+        def wrong_guess(self):
+            self.player_score += 0
+            return self.player_score
+        
+        def wormhole(self):
+            while True:
+                print("In this wormhole, the laws of physics are bent.")
+                print("This is the deciding moment, guess the way the coin lands. Press 1 for Heads, 2 for Tails, 3 for the coin landing on the side!")
+                self.guess()
+                self.wormhole_toss()
+                
+                if (self.player_guess == self.coin_landing):
+                    print("The coin starts glowing... you guessed correctly...")
+                    time.sleep(2)
+                    print("The wormhole transports you to an unfamiliar place...")
+                    time.sleep(2)
+                    print("You won! Game over!")
+                    break
+
+                elif (self.player_guess != self.coin_landing):
+                    print("The coin starts warping into a portal...")
+                    time.sleep(2)
+                    print("The portal swallows you up into complete daekness...")
+                    time.sleep(2)
+                    print("You are trapped. Game over!")
+                    break
+        def main():
+            my_coin = Coin()
+            my_player = Player()
+            print("The state of the coin is this: ")
+            print(my_coin.get_sideup())
+            while True:
+            
+                if (my_player.player_guess == my_coin.random_int):
+                    print("You win! Current score: ")
+                    print(my_player.correct_guess)
+                    continue
+
+                elif (my_coin.sideup == "Upright"): 
+                    print("The coin landed on its side, try again!")
+                    continue
+
+                elif(my_coin.sideup == "Ground"):
+                    print("The coin dropped to the ground and into a rabbit hole! Try again!")
+                    continue
+
+                elif (my_coin.sideup == "Wormhole"):
+                    print("The coin defied gravity and got lost in a wormhole! Watch out!")
+                    break
+
+                else:
+                    print("You lose! Current score: ")
+                    print(my_player.wrong_guess())
+                    continue
+
+        main()
+
+main()

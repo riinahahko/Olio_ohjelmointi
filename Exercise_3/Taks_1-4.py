@@ -39,7 +39,7 @@ class Coin:
             elif self.random_int == 4:
                 self.sideup = "Wormhole"
 
-        def get_sideup(self):
+        def __get_sideup(self):
             return self.sideup
 
         def wormhole_toss(self):
@@ -99,16 +99,16 @@ def main():
     my_player = Player()
     my_coin.setCurrency()
     print("The state of the coin is this: ")
-    print(my_coin.get_sideup())
+    print(my_coin._Coin__get_sideup())
 
     while True:
                 my_player.guess()
                 print("Let's toss the coin")
                 my_coin.toss()
-                print(my_coin.get_sideup())
+                print(my_coin._Coin__get_sideup())
                 if (my_player.player_guess == my_coin.random_int):
                     print("You win! Current score: ")
-                    print(my_player.correct_guess)
+                    print(my_player.correct_guess())
                     continue
 
                 elif (my_coin.sideup == "Upright"): 

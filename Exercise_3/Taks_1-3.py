@@ -1,95 +1,16 @@
-# File: Exercise_2.py
+# File: Exercise_3.py
 # Author: Riina Hahko
-# Description: Exercise2, Task 3
+# Description: Programming demo
 
+# Task 1;
+# Abstraction - packages of indidual parts of the code.
+# Accessor method - method used to access the state of the object i.e, the data hidden in the object can be accessed from this method.
+# Mutator method - method used to mutate/modify the state of an object i.e, alters the hidden value of the data variable.
+# Public method can be invoked from anywhere, no restrictions on its use.
+# Private method is internat to the implematation of a class and can only be called by other instance methods of the class.
+# __str__ method represents the class objects as a string.
 
-
-def main(): 
-
-    # 3.
-    
-    while True:
-        user_input = input("Exercise points: ")
-
-        try:
-            point = int(user_input)
-
-            if point >= 0 and point <= 120:
-                
-                if point >= 60 and point < 71:
-                    print("Your grade is: 1")
-
-                elif point >= 71 and point < 83:
-                    print("Your grade is: 2")
-
-                elif point >= 83 and point < 95:
-                    print("Your grade is: 3")
-
-                elif point >= 96 and point < 107:
-                    print("Your grade is: 4")
-
-                elif point >= 107 and point <= 120:
-                    print("Your grade is: 5")
-                    
-                elif point < 60:
-                    print("Your grade is: 0") 
-                break
-
-            else:
-                print("Error: exercise points cannot be < 0 or > 120.")
-        
-        except ValueError:
-            print("Error: exercise points cannot be < 0 or > 120.")
-        
-
-main()
-
-def main(): 
-
-    #5
-    student_name = []
-    current_student = ""
-    student_amount = 0
-    student_grade = []
-    current_grade = 0
-    grade_total = 0
-
-    while True:
-        current_student = input("Give students first name: ")
-        student_name.append(current_student)
-        student_amount += 1
-
-        while True:
-            try: 
-                current_grade = int(input("Give students grade: "))
-                if current_grade >= 0 and current_grade <= 5:
-                    student_grade.append(current_grade)
-                    grade_total += current_grade
-                    break
-
-                else:
-                    print("Error; enter a grade between 0-5")
-            except ValueError:
-                print("Error; enter a grade between 0-5")
-    
-        user_choice = ""
-        
-        while user_choice != "Y" or user_choice != "y" or user_choice != "N" or user_choice != "n":
-            user_choice = input("Do you want to add more students? Y/N: ")
-
-            if user_choice == "Y" or user_choice =="y":
-                break
-            elif user_choice == "N" or user_choice == "n":
-                break
-        
-        if user_choice == "Y" or user_choice == "y":
-            continue
-        elif user_choice == "N" or user_choice == "n":
-            break
-
-    print("The average grade from all students is: ", grade_total/student_amount)
-
-main()
+# Task 2;
 
 import random 
 import time 
@@ -97,6 +18,13 @@ import time
 class Coin:
         def __init__(self):
             self.sideup = "Heads"
+            self.currency = ""
+
+        def setCurrency(self):
+            self.possibleCurrencies = ["Euro", "Pound", "Dollar", "Swedish krona", "Yen"]
+            self.selector = random.randint(0,len(self.possibleCurrencies))
+            self.currency = self.possibleCurrencies[self.selector]
+            print(self.currency)
 
         def toss(self):
             self.random_int = random.randint(0,4)
@@ -128,7 +56,7 @@ class Player(Coin):
 
         def __init__(self):
             self.player_score = 0
-        
+
         def guess (self):
             self.player_guess = int(input("Guess which way the coin falls: Press 1 for Heads, 2 for Tails: "))
             print("You guessed: ")
@@ -169,8 +97,10 @@ def main():
 
     my_coin = Coin()
     my_player = Player()
+    my_coin.setCurrency()
     print("The state of the coin is this: ")
     print(my_coin.get_sideup())
+
     while True:
                 my_player.guess()
                 print("Let's toss the coin")

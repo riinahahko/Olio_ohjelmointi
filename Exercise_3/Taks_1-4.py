@@ -88,7 +88,7 @@ class Player(Coin):
                 elif (self.player_guess != self.coin_landing):
                     print("The coin starts warping into a portal...")
                     time.sleep(2)
-                    print("The portal swallows you up into complete daekness...")
+                    print("The portal swallows you up into complete darkness...")
                     time.sleep(2)
                     print("You are trapped. Game over!")
                     break

@@ -91,12 +91,10 @@ def main():
 
 main()
 
-def main():
+import random 
+import time 
 
-    import random 
-    import time 
-
-    class Coin:
+class Coin:
         def __init__(self):
             self.sideup = "Heads"
 
@@ -126,7 +124,7 @@ def main():
             if self.coin_landing == 2:
                 self.sideup = "Side"
         
-    class Player(Coin):
+class Player(Coin):
 
         def __init__(self):
             self.player_score = 0
@@ -166,13 +164,18 @@ def main():
                     time.sleep(2)
                     print("You are trapped. Game over!")
                     break
-        def main():
-            my_coin = Coin()
-            my_player = Player()
-            print("The state of the coin is this: ")
-            print(my_coin.get_sideup())
-            while True:
-            
+def main():
+
+
+    my_coin = Coin()
+    my_player = Player()
+    print("The state of the coin is this: ")
+    print(my_coin.get_sideup())
+    while True:
+                my_player.guess()
+                print("Let's toss the coin")
+                my_coin.toss()
+                print(my_coin.get_sideup())
                 if (my_player.player_guess == my_coin.random_int):
                     print("You win! Current score: ")
                     print(my_player.correct_guess)
@@ -188,6 +191,7 @@ def main():
 
                 elif (my_coin.sideup == "Wormhole"):
                     print("The coin defied gravity and got lost in a wormhole! Watch out!")
+                    my_player.wormhole()
                     break
 
                 else:
@@ -195,6 +199,6 @@ def main():
                     print(my_player.wrong_guess())
                     continue
 
-        main()
+main()
 
 main()
